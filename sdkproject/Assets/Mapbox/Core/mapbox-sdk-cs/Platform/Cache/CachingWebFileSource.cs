@@ -155,6 +155,26 @@
 						// if the request was successful add tile to all caches
 						if (!r.HasError && null != r.Data)
 						{
+							//currently we need to clip VTs to get rid of the included buffer
+							//clipping is costly: up to 30% of CPU usage in a frame
+							//especially with overzoomed tiles: save clipped tile
+							if (r.ContentType == "application/x-protobuf")
+							{
+								Mapbox.VectorTile.VectorTile vt = new Mapbox.VectorTile.VectorTile(data, false);
+								foreach (var lyrName in vt.LayerNames())
+								{
+									Mapbox.VectorTile.VectorTileLayer vtLayer = vt.GetLayer(lyrName);
+									for (int idx = 0; idx < vtLayer.FeatureCount(); idx++)
+									{
+										Mapbox.VectorTile.VectorTileFeature vtFeat = vtLayer.GetFeature(idx, 0);
+										vtFeat.Geometry<float>
+									}
+
+
+								}
+								Mapbox.VectorTile.VectorTile vtOut = new Mapbox.VectorTile.VectorTile(null, false);
+
+							}
 							foreach (var cache in _caches)
 							{
 								cache.Add(mapId, tileId, r.Data);
