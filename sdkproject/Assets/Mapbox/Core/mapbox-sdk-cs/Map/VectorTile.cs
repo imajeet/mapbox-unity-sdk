@@ -151,8 +151,16 @@ namespace Mapbox.Map {
 
 		internal override bool ParseTileData(byte[] data) {
 			try {
-				var decompressed = Compression.Decompress(data);
-				this.data = new Mapbox.VectorTile.VectorTile(decompressed);
+				//var decompressed = Compression.Decompress(data);
+				//this.data = new Mapbox.VectorTile.VectorTile(decompressed);
+
+				using(System.IO.MemoryStream ms = new System.IO.MemoryStream())
+				{
+					ms.Write(data, 0, data.Length);
+					ms.Seek(0, System.IO.SeekOrigin.Begin);
+					System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+					this.data = bf.Deserialize(ms) as Mapbox.VectorTile.VectorTile;
+				}
 
 				return true;
 			}

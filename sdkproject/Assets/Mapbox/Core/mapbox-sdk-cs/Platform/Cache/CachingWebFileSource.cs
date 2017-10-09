@@ -160,19 +160,25 @@
 							//especially with overzoomed tiles: save clipped tile
 							if (r.ContentType == "application/x-protobuf")
 							{
-								Mapbox.VectorTile.VectorTile vt = new Mapbox.VectorTile.VectorTile(data, false);
+								var decompressed = Utils.Compression.Decompress(r.Data);
+								Mapbox.VectorTile.VectorTile vt = new Mapbox.VectorTile.VectorTile(decompressed, false);
 								foreach (var lyrName in vt.LayerNames())
 								{
 									Mapbox.VectorTile.VectorTileLayer vtLayer = vt.GetLayer(lyrName);
 									for (int idx = 0; idx < vtLayer.FeatureCount(); idx++)
 									{
 										Mapbox.VectorTile.VectorTileFeature vtFeat = vtLayer.GetFeature(idx, 0);
-										vtFeat.Geometry<float>
+										//this calculates and caches the geometry
+										vtFeat.Geometry<float>(0);
 									}
-
-
 								}
-								Mapbox.VectorTile.VectorTile vtOut = new Mapbox.VectorTile.VectorTile(null, false);
+								System.Runtime.Serialization.Formatters.Binary.BinaryFormatter bf = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+								using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+								{
+									bf.Serialize(ms, vt);
+									r.Data = ms.ToArray();
+								}
+
 
 							}
 							foreach (var cache in _caches)
