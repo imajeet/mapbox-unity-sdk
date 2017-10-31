@@ -55,7 +55,15 @@ namespace Mapbox.Unity.Utilities
 
 		private IEnumerator DoRequest()
 		{
-			yield return _request.SendWebRequest();
+			//yield return null;
+			//yield return new WaitForEndOfFrame();
+			//yield return _request.SendWebRequest();
+
+			_request.SendWebRequest();
+			while (!_request.isDone)
+			{
+				yield return null;
+			}
 
 			Response response;
 			if (_request.isHttpError || _request.isNetworkError)

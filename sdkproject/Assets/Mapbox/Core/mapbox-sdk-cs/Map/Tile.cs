@@ -111,9 +111,9 @@ namespace Mapbox.Map
 			}
 		}
 
-        /// <summary>
-        /// Occurs when there's a tile error. It bubbles up all the way up to  the AbstractTileFactory and MapVisualizer
-        /// </summary>
+		/// <summary>
+		/// Occurs when there's a tile error. It bubbles up all the way up to  the AbstractTileFactory and MapVisualizer
+		/// </summary>
 		public event Action<TileErrorEventArgs> OnTileError = delegate { };
 
 		/// <summary>
@@ -207,12 +207,13 @@ namespace Mapbox.Map
 		private void HandleTileResponse(Response response)
 		{
 
+			//if (null == response.Data || (response.HasError && response.StatusCode != 200))
 			if (response.HasError)
 			{
 				response.Exceptions.ToList().ForEach(e => AddException(e));
 				if (OnTileError != null)
 				{
-					OnTileError(new TileErrorEventArgs(_id,this.GetType(),null,_exceptions));
+					OnTileError(new TileErrorEventArgs(_id, this.GetType(), null, _exceptions));
 				}
 			}
 			else

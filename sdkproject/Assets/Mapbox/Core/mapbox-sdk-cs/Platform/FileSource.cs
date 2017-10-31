@@ -7,6 +7,7 @@
 namespace Mapbox.Platform
 {
 	using Mapbox.Map;
+	using Mapbox.Threading;
 	using Mapbox.Unity.Utilities;
 	using System;
 	using System.Collections;
@@ -16,6 +17,7 @@ namespace Mapbox.Platform
 	using System.Net.Security;
 #if !NETFX_CORE
 	using System.Security.Cryptography.X509Certificates;
+	using System.Threading.Tasks;
 #endif
 #if !UNITY_5_3_OR_NEWER
 	using System.Threading;
@@ -126,39 +128,82 @@ namespace Mapbox.Platform
 
 			// TODO: plugin caching somewhere around here
 
-			var request = IAsyncRequestFactory.CreateRequest(
-				url
-				, (Response response) =>
+			rateLimit();
+
+			IAsyncRequest request = null;
+			bool done = false;
+			Worker worker = new Worker();
+			worker.ProcessWorkLoad(() =>
+			{
+
+				request = IAsyncRequestFactory.CreateRequest(
+				   url
+				   , (Response response) =>
+				   {
+					   try
+					   {
+						   if (response.XRateLimitInterval.HasValue) { XRateLimitInterval = response.XRateLimitInterval; }
+						   if (response.XRateLimitLimit.HasValue) { XRateLimitLimit = response.XRateLimitLimit; }
+						   if (response.XRateLimitReset.HasValue) { XRateLimitReset = response.XRateLimitReset; }
+						   callback(response);
+						   lock (_lock)
+						   {
+							   //another place to catch if request has been cancelled
+							   try
+							   {
+								   _requests.Remove(response.Request);
+							   }
+							   catch (Exception ex)
+							   {
+								   System.Diagnostics.Debug.WriteLine(ex);
+							   }
+						   }
+					   }
+					   catch { }
+					   finally
+					   {
+						   
+						   done = true;
+					   }
+				   }
+				   , timeout
+			   );
+				lock (_lock)
 				{
-					if (response.XRateLimitInterval.HasValue) { XRateLimitInterval = response.XRateLimitInterval; }
-					if (response.XRateLimitLimit.HasValue) { XRateLimitLimit = response.XRateLimitLimit; }
-					if (response.XRateLimitReset.HasValue) { XRateLimitReset = response.XRateLimitReset; }
-					callback(response);
-					lock (_lock)
+					if (null != request)
 					{
-						//another place to catch if request has been cancelled
-						try
+						//sometimes we get here after the request has already finished
+						if (!request.IsCompleted)
 						{
-							_requests.Remove(response.Request);
-						}
-						catch (Exception ex)
-						{
-							System.Diagnostics.Debug.WriteLine(ex);
+							_requests.Add(request, 0);
 						}
 					}
 				}
-				, timeout
-			);
-			lock (_lock)
-			{
-				//sometimes we get here after the request has already finished
-				if (!request.IsCompleted)
-				{
-					_requests.Add(request, 0);
-				}
-			}
+
+			});
+
+			//while (!done) { }
+
 			//yield return request;
 			return request;
+		}
+
+
+		private long _lastTicks = 0;
+		private readonly int _rateLimitMilliseconds = 500;
+
+		private void rateLimit()
+		{
+			lock (_lock)
+			{
+				long elapsedTicks = DateTime.Now.Ticks - _lastTicks;
+				TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
+				if (elapsedSpan.TotalMilliseconds < _rateLimitMilliseconds)
+				{
+					Task.Delay(_rateLimitMilliseconds - (int)elapsedSpan.TotalMilliseconds);
+				}
+				_lastTicks = DateTime.Now.Ticks;
+			}
 		}
 
 
