@@ -13,12 +13,13 @@
 
 		private bool _disposed;
 		private List<ICache> _caches = new List<ICache>();
-		private string _accessToken;
-
+		//private string _accessToken;
+		private FileSource _fileSource;
 
 		public CachingWebFileSource(string accessToken)
 		{
-			_accessToken = accessToken;
+			//_accessToken = accessToken;
+			_fileSource = new FileSource(accessToken);
 		}
 
 
@@ -130,6 +131,7 @@
 			else
 			{
 				// requested tile is not in any of the caches yet, get it
+				/*
 				var uriBuilder = new UriBuilder(uri);
 
 				if (!string.IsNullOrEmpty(_accessToken))
@@ -144,9 +146,12 @@
 						uriBuilder.Query = accessTokenQuery;
 					}
 				}
+				*/
 
-				return IAsyncRequestFactory.CreateRequest(
-					uriBuilder.ToString(),
+
+
+				return _fileSource.Request(
+					uri,
 					(Response r) =>
 					{
 						// if the request was successful add tile to all caches

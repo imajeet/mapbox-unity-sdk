@@ -59,7 +59,7 @@ namespace Mapbox.Unity.Utilities
 			//yield return new WaitForEndOfFrame();
 			//yield return _request.SendWebRequest();
 
-			_request.SendWebRequest();
+			yield return _request.SendWebRequest();
 			while (!_request.isDone)
 			{
 				yield return null;

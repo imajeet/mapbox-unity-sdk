@@ -128,79 +128,130 @@ namespace Mapbox.Platform
 
 			// TODO: plugin caching somewhere around here
 
-			rateLimit();
-
-			IAsyncRequest request = null;
-			bool done = false;
-			Worker worker = new Worker();
-			worker.ProcessWorkLoad(() =>
-			{
-
-				request = IAsyncRequestFactory.CreateRequest(
-				   url
-				   , (Response response) =>
-				   {
-					   try
-					   {
-						   if (response.XRateLimitInterval.HasValue) { XRateLimitInterval = response.XRateLimitInterval; }
-						   if (response.XRateLimitLimit.HasValue) { XRateLimitLimit = response.XRateLimitLimit; }
-						   if (response.XRateLimitReset.HasValue) { XRateLimitReset = response.XRateLimitReset; }
-						   callback(response);
-						   lock (_lock)
-						   {
-							   //another place to catch if request has been cancelled
-							   try
-							   {
-								   _requests.Remove(response.Request);
-							   }
-							   catch (Exception ex)
-							   {
-								   System.Diagnostics.Debug.WriteLine(ex);
-							   }
-						   }
-					   }
-					   catch { }
-					   finally
-					   {
-						   
-						   done = true;
-					   }
-				   }
-				   , timeout
-			   );
-				lock (_lock)
-				{
-					if (null != request)
-					{
-						//sometimes we get here after the request has already finished
-						if (!request.IsCompleted)
+			/*
+						IAsyncRequest request = null;
+						bool done = false;
+						Worker worker = new Worker();
+						worker.ProcessWorkLoad(() =>
 						{
-							_requests.Add(request, 0);
+							rateLimit(DateTime.Now.Ticks);
+
+							request = IAsyncRequestFactory.CreateRequest(
+							   url
+							   , (Response response) =>
+							   {
+								   try
+								   {
+									   if (response.XRateLimitInterval.HasValue) { XRateLimitInterval = response.XRateLimitInterval; }
+									   if (response.XRateLimitLimit.HasValue) { XRateLimitLimit = response.XRateLimitLimit; }
+									   if (response.XRateLimitReset.HasValue) { XRateLimitReset = response.XRateLimitReset; }
+									   callback(response);
+									   lock (_lock)
+									   {
+										   //another place to catch if request has been cancelled
+										   try
+										   {
+											   _requests.Remove(response.Request);
+										   }
+										   catch (Exception ex)
+										   {
+											   System.Diagnostics.Debug.WriteLine(ex);
+										   }
+									   }
+								   }
+								   catch { }
+								   finally
+								   {
+
+									   done = true;
+								   }
+							   }
+							   , timeout
+						   );
+							lock (_lock)
+							{
+								if (null != request)
+								{
+									//sometimes we get here after the request has already finished
+									if (!request.IsCompleted)
+									{
+										_requests.Add(request, 0);
+									}
+								}
+							}
+
+						});
+
+						//while (!done) { }
+			*/
+
+			long beforeRateLimit = DateTime.Now.Ticks;
+			//_lastTicks = beforeRateLimit;
+			rateLimit(beforeRateLimit);
+			long afterRateLimit = DateTime.Now.Ticks;
+			//Debug.LogWarningFormat("limited for {0}s", new TimeSpan((afterRateLimit - beforeRateLimit)).TotalSeconds);
+
+
+			var request = IAsyncRequestFactory.CreateRequest(
+				url
+				, (Response response) =>
+				{
+					if (response.XRateLimitInterval.HasValue) { XRateLimitInterval = response.XRateLimitInterval; }
+					if (response.XRateLimitLimit.HasValue) { XRateLimitLimit = response.XRateLimitLimit; }
+					if (response.XRateLimitReset.HasValue) { XRateLimitReset = response.XRateLimitReset; }
+
+					if (response.XRateLimitInterval.HasValue || response.XRateLimitLimit.HasValue || response.XRateLimitReset.HasValue) {
+						Debug.LogWarningFormat(
+							"LimitInterval:{0} LimitLimit:{1} LimitReset:{2}"
+							, response.XRateLimitInterval
+							, response.XRateLimitLimit
+							, response.XRateLimitReset
+						);
+					}
+
+					callback(response);
+					lock (_lock)
+					{
+						//another place to catch if request has been cancelled
+						try
+						{
+							_requests.Remove(response.Request);
+						}
+						catch (Exception ex)
+						{
+							System.Diagnostics.Debug.WriteLine(ex);
 						}
 					}
 				}
-
-			});
-
-			//while (!done) { }
-
+				, timeout
+			);
+			lock (_lock)
+			{
+				//sometimes we get here after the request has already finished
+				if (!request.IsCompleted)
+				{
+					_requests.Add(request, 0);
+				}
+			}
 			//yield return request;
 			return request;
 		}
 
 
 		private long _lastTicks = 0;
-		private readonly int _rateLimitMilliseconds = 500;
+		private readonly int _rateLimitMilliseconds = 30;
 
-		private void rateLimit()
+		private void rateLimit(long nowTick)
 		{
 			lock (_lock)
 			{
-				long elapsedTicks = DateTime.Now.Ticks - _lastTicks;
+				long elapsedTicks = nowTick - _lastTicks;
+				//Debug.LogErrorFormat("elapsedTicks: {0}", elapsedTicks);
 				TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
 				if (elapsedSpan.TotalMilliseconds < _rateLimitMilliseconds)
 				{
-					Task.Delay(_rateLimitMilliseconds - (int)elapsedSpan.TotalMilliseconds);
+					//Debug.LogWarning("ratelimit");
+					Task.Delay(_rateLimitMilliseconds - (int)elapsedSpan.TotalMilliseconds).Wait();
 				}
 				_lastTicks = DateTime.Now.Ticks;
 			}
