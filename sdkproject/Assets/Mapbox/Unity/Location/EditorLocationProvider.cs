@@ -18,7 +18,7 @@ namespace Mapbox.Unity.Location
 		/// </summary>
 		[SerializeField]
 		[Geocode]
-		string _latitudeLongitude;
+		string[] _latitudeLongitude;
 
 		/// <summary>
 		/// The mock heading value.
@@ -27,11 +27,15 @@ namespace Mapbox.Unity.Location
 		[Range(0, 359)]
 		float _heading;
 
+
+		private int idx = -1;
 		Vector2d LatitudeLongitude
 		{
 			get
 			{
-				return Conversions.StringToLatLon(_latitudeLongitude);
+				idx++;
+				if (idx >= _latitudeLongitude.Length) { idx = _latitudeLongitude.Length - 1; }
+				return Conversions.StringToLatLon(_latitudeLongitude[idx]);
 			}
 		}
 
