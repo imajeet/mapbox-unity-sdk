@@ -1,0 +1,2799 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SQLiteConnection
+   | Mapbox SDK for Unity </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SQLiteConnection
+   | Mapbox SDK for Unity ">
+    <meta name="generator" content="docfx 2.14.1.0">
+    
+    <link rel="shortcut icon" href="../../docs/images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../docs/images/mapbox-logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              
+              <h1 id="SQLite4Unity3d_SQLiteConnection" data-uid="SQLite4Unity3d.SQLiteConnection">Class SQLiteConnection
+              </h1>
+              <div class="markdown level0 summary"><p>Represents an open connection to a SQLite database.</p>
+</div>
+              <div class="markdown level0 conceptual"></div>
+              <div class="inheritance">
+                <h5>Inheritance</h5>
+                  <div class="level0"><span class="xref">System.Object</span></div>
+                  <div class="level1"><span class="xref">SQLiteConnection</span></div>
+              </div>
+              <h6><strong>Namespace</strong>:SQLite4Unity3d</h6>
+              <h6><strong>Assembly</strong>:cs.temp.dll.dll</h6>
+              <h5 id="SQLite4Unity3d_SQLiteConnection_syntax">Syntax</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public class SQLiteConnection : IDisposable</code></pre>
+              </div>
+              <h3 id="constructors">Constructors
+              </h3>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection__ctor_" data-uid="SQLite4Unity3d.SQLiteConnection.#ctor*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection__ctor_System_String_SQLite4Unity3d_SQLiteOpenFlags_System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.#ctor(System.String,SQLite4Unity3d.SQLiteOpenFlags,System.Boolean)">SQLiteConnection(String, SQLiteOpenFlags, Boolean)</h4>
+              <div class="markdown level1 summary"><p>Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public SQLiteConnection(string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = false)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">databasePath</span></td>
+                    <td><p>Specifies the path to the database file.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.SQLiteOpenFlags.html">SQLiteOpenFlags</a></td>
+                    <td><span class="parametername">openFlags</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">storeDateTimeAsTicks</span></td>
+                    <td><p>Specifies whether to store DateTime properties as ticks (true) or strings (false). You
+absolutely do want to store them as Ticks in all new projects. The default of false is
+only here for backwards compatibility. There is a <em>significant</em> speed advantage, with no
+down sides, when setting storeDateTimeAsTicks = true.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection__ctor_" data-uid="SQLite4Unity3d.SQLiteConnection.#ctor*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection__ctor_System_String_System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.#ctor(System.String,System.Boolean)">SQLiteConnection(String, Boolean)</h4>
+              <div class="markdown level1 summary"><p>Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public SQLiteConnection(string databasePath, bool storeDateTimeAsTicks = false)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">databasePath</span></td>
+                    <td><p>Specifies the path to the database file.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">storeDateTimeAsTicks</span></td>
+                    <td><p>Specifies whether to store DateTime properties as ticks (true) or strings (false). You
+absolutely do want to store them as Ticks in all new projects. The default of false is
+only here for backwards compatibility. There is a <em>significant</em> speed advantage, with no
+down sides, when setting storeDateTimeAsTicks = true.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="properties">Properties
+              </h3>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_BusyTimeout_" data-uid="SQLite4Unity3d.SQLiteConnection.BusyTimeout*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_BusyTimeout" data-uid="SQLite4Unity3d.SQLiteConnection.BusyTimeout">BusyTimeout</h4>
+              <div class="markdown level1 summary"><p>Sets a busy handler to sleep the specified amount of time when a table is locked.
+The handler will sleep multiple times until a total time of <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_BusyTimeout">BusyTimeout</a> has accumulated.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public TimeSpan BusyTimeout { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">TimeSpan</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_DatabasePath_" data-uid="SQLite4Unity3d.SQLiteConnection.DatabasePath*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_DatabasePath" data-uid="SQLite4Unity3d.SQLiteConnection.DatabasePath">DatabasePath</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public string DatabasePath { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Handle_" data-uid="SQLite4Unity3d.SQLiteConnection.Handle*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Handle" data-uid="SQLite4Unity3d.SQLiteConnection.Handle">Handle</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Sqlite3DatabaseHandle Handle { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Sqlite3DatabaseHandle</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_IsInTransaction_" data-uid="SQLite4Unity3d.SQLiteConnection.IsInTransaction*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_IsInTransaction" data-uid="SQLite4Unity3d.SQLiteConnection.IsInTransaction">IsInTransaction</h4>
+              <div class="markdown level1 summary"><p>Whether <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_BeginTransaction">BeginTransaction()</a> has been called and the database is waiting for a <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_Commit">Commit()</a>.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool IsInTransaction { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_StoreDateTimeAsTicks_" data-uid="SQLite4Unity3d.SQLiteConnection.StoreDateTimeAsTicks*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_StoreDateTimeAsTicks" data-uid="SQLite4Unity3d.SQLiteConnection.StoreDateTimeAsTicks">StoreDateTimeAsTicks</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool StoreDateTimeAsTicks { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_TableMappings_" data-uid="SQLite4Unity3d.SQLiteConnection.TableMappings*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_TableMappings" data-uid="SQLite4Unity3d.SQLiteConnection.TableMappings">TableMappings</h4>
+              <div class="markdown level1 summary"><p>Returns the mappings from types to tables that the connection
+currently understands.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public IEnumerable&lt;TableMapping&gt; TableMappings { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_TimeExecution_" data-uid="SQLite4Unity3d.SQLiteConnection.TimeExecution*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_TimeExecution" data-uid="SQLite4Unity3d.SQLiteConnection.TimeExecution">TimeExecution</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool TimeExecution { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Trace_" data-uid="SQLite4Unity3d.SQLiteConnection.Trace*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Trace" data-uid="SQLite4Unity3d.SQLiteConnection.Trace">Trace</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool Trace { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="methods">Methods
+              </h3>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_BeginTransaction_" data-uid="SQLite4Unity3d.SQLiteConnection.BeginTransaction*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_BeginTransaction" data-uid="SQLite4Unity3d.SQLiteConnection.BeginTransaction">BeginTransaction()</h4>
+              <div class="markdown level1 summary"><p>Begins a new transaction. Call <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_Commit">Commit()</a> to end the transaction.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void BeginTransaction()</code></pre>
+              </div>
+              <h5 id="SQLite4Unity3d_SQLiteConnection_BeginTransaction_examples">Examples</h5>
+              <p>Throws if a transaction has already begun.</p>
+
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Close_" data-uid="SQLite4Unity3d.SQLiteConnection.Close*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Close" data-uid="SQLite4Unity3d.SQLiteConnection.Close">Close()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void Close()</code></pre>
+              </div>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Commit_" data-uid="SQLite4Unity3d.SQLiteConnection.Commit*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Commit" data-uid="SQLite4Unity3d.SQLiteConnection.Commit">Commit()</h4>
+              <div class="markdown level1 summary"><p>Commits the transaction that was begun by <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_BeginTransaction">BeginTransaction()</a>.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void Commit()</code></pre>
+              </div>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateCommand_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateCommand*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateCommand_System_String_System_Object___" data-uid="SQLite4Unity3d.SQLiteConnection.CreateCommand(System.String,System.Object[])">CreateCommand(String, Object[])</h4>
+              <div class="markdown level1 summary"><p>Creates a new SQLiteCommand given the command text with arguments. Place a &#39;?&#39;
+in the command text for each of the arguments.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public SQLiteCommand CreateCommand(string cmdText, params object[] ps)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">cmdText</span></td>
+                    <td><p>The fully escaped SQL.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><span class="parametername">ps</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.SQLiteCommand.html">SQLiteCommand</a></td>
+                    <td><p>A <a class="xref" href="SQLite4Unity3d.SQLiteCommand.html">SQLiteCommand</a></p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateIndex_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateIndex_System_String_System_String_System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex(System.String,System.String,System.Boolean)">CreateIndex(String, String, Boolean)</h4>
+              <div class="markdown level1 summary"><p>Creates an index for the specified table and column.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int CreateIndex(string tableName, string columnName, bool unique = false)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">tableName</span></td>
+                    <td><p>Name of the database table</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">columnName</span></td>
+                    <td><p>Name of the column to index</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">unique</span></td>
+                    <td><p>Whether the index should be unique</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateIndex_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateIndex_System_String_System_String_System_String_System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex(System.String,System.String,System.String,System.Boolean)">CreateIndex(String, String, String, Boolean)</h4>
+              <div class="markdown level1 summary"><p>Creates an index for the specified table and column.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int CreateIndex(string indexName, string tableName, string columnName, bool unique = false)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">indexName</span></td>
+                    <td><p>Name of the index to create</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">tableName</span></td>
+                    <td><p>Name of the database table</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">columnName</span></td>
+                    <td><p>Name of the column to index</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">unique</span></td>
+                    <td><p>Whether the index should be unique</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateIndex_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateIndex_System_String_System_String_System_String___System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex(System.String,System.String,System.String[],System.Boolean)">CreateIndex(String, String, String[], Boolean)</h4>
+              <div class="markdown level1 summary"><p>Creates an index for the specified table and columns.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int CreateIndex(string indexName, string tableName, string[] columnNames, bool unique = false)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">indexName</span></td>
+                    <td><p>Name of the index to create</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">tableName</span></td>
+                    <td><p>Name of the database table</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span>[]</td>
+                    <td><span class="parametername">columnNames</span></td>
+                    <td><p>An array of column names to index</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">unique</span></td>
+                    <td><p>Whether the index should be unique</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateIndex_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateIndex_System_String_System_String___System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex(System.String,System.String[],System.Boolean)">CreateIndex(String, String[], Boolean)</h4>
+              <div class="markdown level1 summary"><p>Creates an index for the specified table and columns.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int CreateIndex(string tableName, string[] columnNames, bool unique = false)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">tableName</span></td>
+                    <td><p>Name of the database table</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span>[]</td>
+                    <td><span class="parametername">columnNames</span></td>
+                    <td><p>An array of column names to index</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">unique</span></td>
+                    <td><p>Whether the index should be unique</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateIndex_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateIndex__1_Expression_Func___0_System_Object___System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateIndex``1(Expression{Func{``0,System.Object}},System.Boolean)">CreateIndex&lt;T&gt;(Expression&lt;Func&lt;T, Object&gt;&gt;, Boolean)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void CreateIndex&lt;T&gt;(Expression&lt;Func&lt;T, object&gt;&gt; property, bool unique = false)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Object</span>&gt;&gt;</td>
+                    <td><span class="parametername">property</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">unique</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateTable_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateTable*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateTable_Type_SQLite4Unity3d_CreateFlags_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateTable(Type,SQLite4Unity3d.CreateFlags)">CreateTable(Type, CreateFlags)</h4>
+              <div class="markdown level1 summary"><p>Executes a &quot;create table if not exists&quot; on the database. It also
+creates any specified indexes on the columns of the table. It uses
+a schema automatically generated from the specified type. You can
+later access this schema by calling GetMapping.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int CreateTable(Type ty, CreateFlags createFlags = CreateFlags.None)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Type</span></td>
+                    <td><span class="parametername">ty</span></td>
+                    <td><p>Type to reflect to a database table.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.CreateFlags.html">CreateFlags</a></td>
+                    <td><span class="parametername">createFlags</span></td>
+                    <td><p>Optional flags allowing implicit PK and indexes based on naming conventions.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of entries added to the database schema.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_CreateTable_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateTable*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_CreateTable__1_SQLite4Unity3d_CreateFlags_" data-uid="SQLite4Unity3d.SQLiteConnection.CreateTable``1(SQLite4Unity3d.CreateFlags)">CreateTable&lt;T&gt;(CreateFlags)</h4>
+              <div class="markdown level1 summary"><p>Executes a &quot;create table if not exists&quot; on the database. It also
+creates any specified indexes on the columns of the table. It uses
+a schema automatically generated from the specified type. You can
+later access this schema by calling GetMapping.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int CreateTable&lt;T&gt;(CreateFlags createFlags = CreateFlags.None)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.CreateFlags.html">CreateFlags</a></td>
+                    <td><span class="parametername">createFlags</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of entries added to the database schema.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_DeferredQuery_" data-uid="SQLite4Unity3d.SQLiteConnection.DeferredQuery*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_DeferredQuery_SQLite4Unity3d_TableMapping_System_String_System_Object___" data-uid="SQLite4Unity3d.SQLiteConnection.DeferredQuery(SQLite4Unity3d.TableMapping,System.String,System.Object[])">DeferredQuery(TableMapping, String, Object[])</h4>
+              <div class="markdown level1 summary"><p>Creates a SQLiteCommand given the command text (SQL) with arguments. Place a &#39;?&#39;
+in the command text for each of the arguments and then executes that command.
+It returns each row of the result using the specified mapping. This function is
+only used by libraries in order to query the database via introspection. It is
+normally not used.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public IEnumerable&lt;object&gt; DeferredQuery(TableMapping map, string query, params object[] args)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a></td>
+                    <td><span class="parametername">map</span></td>
+                    <td><p>A <a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a> to use to convert the resulting rows
+into objects.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">query</span></td>
+                    <td><p>The fully escaped SQL.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><span class="parametername">args</span></td>
+                    <td><p>Arguments to substitute for the occurences of &#39;?&#39; in the query.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+                    <td><p>An enumerable with one result for each row returned by the query.
+The enumerator will call sqlite3_step on each call to MoveNext, so the database
+connection must remain open for the lifetime of the enumerator.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_DeferredQuery_" data-uid="SQLite4Unity3d.SQLiteConnection.DeferredQuery*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_DeferredQuery__1_System_String_System_Object___" data-uid="SQLite4Unity3d.SQLiteConnection.DeferredQuery``1(System.String,System.Object[])">DeferredQuery&lt;T&gt;(String, Object[])</h4>
+              <div class="markdown level1 summary"><p>Creates a SQLiteCommand given the command text (SQL) with arguments. Place a &#39;?&#39;
+in the command text for each of the arguments and then executes that command.
+It returns each row of the result using the mapping automatically generated for
+the given type.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; DeferredQuery&lt;T&gt;(string query, params object[] args)where T : new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">query</span></td>
+                    <td><p>The fully escaped SQL.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><span class="parametername">args</span></td>
+                    <td><p>Arguments to substitute for the occurences of &#39;?&#39; in the query.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+                    <td><p>An enumerable with one result for each row returned by the query.
+The enumerator will call sqlite3_step on each call to MoveNext, so the database
+connection must remain open for the lifetime of the enumerator.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Delete_" data-uid="SQLite4Unity3d.SQLiteConnection.Delete*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Delete_System_Object_" data-uid="SQLite4Unity3d.SQLiteConnection.Delete(System.Object)">Delete(Object)</h4>
+              <div class="markdown level1 summary"><p>Deletes the given object from the database using its primary key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Delete(object objectToDelete)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">objectToDelete</span></td>
+                    <td><p>The object to delete. It must have a primary key designated using the PrimaryKeyAttribute.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows deleted.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Delete_" data-uid="SQLite4Unity3d.SQLiteConnection.Delete*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Delete__1_System_Object_" data-uid="SQLite4Unity3d.SQLiteConnection.Delete``1(System.Object)">Delete&lt;T&gt;(Object)</h4>
+              <div class="markdown level1 summary"><p>Deletes the object with the specified primary key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Delete&lt;T&gt;(object primaryKey)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">primaryKey</span></td>
+                    <td><p>The primary key of the object to delete.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of objects deleted.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td><p>The type of object.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_DeleteAll_" data-uid="SQLite4Unity3d.SQLiteConnection.DeleteAll*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_DeleteAll__1" data-uid="SQLite4Unity3d.SQLiteConnection.DeleteAll``1">DeleteAll&lt;T&gt;()</h4>
+              <div class="markdown level1 summary"><p>Deletes all the objects from the specified table.
+WARNING WARNING: Let me repeat. It deletes ALL the objects from the
+specified table. Do you really want to do that?</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int DeleteAll&lt;T&gt;()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of objects deleted.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td><p>The type of objects to delete.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Dispose_" data-uid="SQLite4Unity3d.SQLiteConnection.Dispose*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Dispose" data-uid="SQLite4Unity3d.SQLiteConnection.Dispose">Dispose()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+              </div>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Dispose_" data-uid="SQLite4Unity3d.SQLiteConnection.Dispose*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Dispose_System_Boolean_" data-uid="SQLite4Unity3d.SQLiteConnection.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">disposing</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_DropTable_" data-uid="SQLite4Unity3d.SQLiteConnection.DropTable*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_DropTable__1" data-uid="SQLite4Unity3d.SQLiteConnection.DropTable``1">DropTable&lt;T&gt;()</h4>
+              <div class="markdown level1 summary"><p>Executes a &quot;drop table&quot; on the database.  This is non-recoverable.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int DropTable&lt;T&gt;()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_EnableLoadExtension_" data-uid="SQLite4Unity3d.SQLiteConnection.EnableLoadExtension*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_EnableLoadExtension_System_Int32_" data-uid="SQLite4Unity3d.SQLiteConnection.EnableLoadExtension(System.Int32)">EnableLoadExtension(Int32)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void EnableLoadExtension(int onoff)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><span class="parametername">onoff</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Execute_" data-uid="SQLite4Unity3d.SQLiteConnection.Execute*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Execute_System_String_System_Object___" data-uid="SQLite4Unity3d.SQLiteConnection.Execute(System.String,System.Object[])">Execute(String, Object[])</h4>
+              <div class="markdown level1 summary"><p>Creates a SQLiteCommand given the command text (SQL) with arguments. Place a &#39;?&#39;
+in the command text for each of the arguments and then executes that command.
+Use this method instead of Query when you don&#39;t expect rows back. Such cases include
+INSERTs, UPDATEs, and DELETEs.
+You can set the Trace or TimeExecution properties of the connection
+to profile execution.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Execute(string query, params object[] args)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">query</span></td>
+                    <td><p>The fully escaped SQL.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><span class="parametername">args</span></td>
+                    <td><p>Arguments to substitute for the occurences of &#39;?&#39; in the query.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows modified in the database as a result of this execution.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_ExecuteScalar_" data-uid="SQLite4Unity3d.SQLiteConnection.ExecuteScalar*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_ExecuteScalar__1_System_String_System_Object___" data-uid="SQLite4Unity3d.SQLiteConnection.ExecuteScalar``1(System.String,System.Object[])">ExecuteScalar&lt;T&gt;(String, Object[])</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public T ExecuteScalar&lt;T&gt;(string query, params object[] args)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">query</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><span class="parametername">args</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Finalize_" data-uid="SQLite4Unity3d.SQLiteConnection.Finalize*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Finalize" data-uid="SQLite4Unity3d.SQLiteConnection.Finalize">Finalize()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
+              </div>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Find_" data-uid="SQLite4Unity3d.SQLiteConnection.Find*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Find_System_Object_SQLite4Unity3d_TableMapping_" data-uid="SQLite4Unity3d.SQLiteConnection.Find(System.Object,SQLite4Unity3d.TableMapping)">Find(Object, TableMapping)</h4>
+              <div class="markdown level1 summary"><p>Attempts to retrieve an object with the given primary key from the table
+associated with the specified type. Use of this method requires that
+the given type have a designated PrimaryKey (using the PrimaryKeyAttribute).</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public object Find(object pk, TableMapping map)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">pk</span></td>
+                    <td><p>The primary key.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a></td>
+                    <td><span class="parametername">map</span></td>
+                    <td><p>The TableMapping used to identify the object type.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><p>The object with the given primary key or null
+if the object is not found.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Find_" data-uid="SQLite4Unity3d.SQLiteConnection.Find*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Find__1_Expression_Func___0_System_Boolean___" data-uid="SQLite4Unity3d.SQLiteConnection.Find``1(Expression{Func{``0,System.Boolean}})">Find&lt;T&gt;(Expression&lt;Func&lt;T, Boolean&gt;&gt;)</h4>
+              <div class="markdown level1 summary"><p>Attempts to retrieve the first object that matches the predicate from the table
+associated with the specified type. </p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public T Find&lt;T&gt;(Expression&lt;Func&lt;T, bool&gt;&gt; predicate)where T : new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+                    <td><span class="parametername">predicate</span></td>
+                    <td><p>A predicate for which object to find.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">T</span></td>
+                    <td><p>The object that matches the given predicate or null
+if the object is not found.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Find_" data-uid="SQLite4Unity3d.SQLiteConnection.Find*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Find__1_System_Object_" data-uid="SQLite4Unity3d.SQLiteConnection.Find``1(System.Object)">Find&lt;T&gt;(Object)</h4>
+              <div class="markdown level1 summary"><p>Attempts to retrieve an object with the given primary key from the table
+associated with the specified type. Use of this method requires that
+the given type have a designated PrimaryKey (using the PrimaryKeyAttribute).</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public T Find&lt;T&gt;(object pk)where T : new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">pk</span></td>
+                    <td><p>The primary key.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">T</span></td>
+                    <td><p>The object with the given primary key or null
+if the object is not found.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Get_" data-uid="SQLite4Unity3d.SQLiteConnection.Get*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Get__1_Expression_Func___0_System_Boolean___" data-uid="SQLite4Unity3d.SQLiteConnection.Get``1(Expression{Func{``0,System.Boolean}})">Get&lt;T&gt;(Expression&lt;Func&lt;T, Boolean&gt;&gt;)</h4>
+              <div class="markdown level1 summary"><p>Attempts to retrieve the first object that matches the predicate from the table
+associated with the specified type. </p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public T Get&lt;T&gt;(Expression&lt;Func&lt;T, bool&gt;&gt; predicate)where T : new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Expression</span>&lt;<span class="xref">Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;&gt;</td>
+                    <td><span class="parametername">predicate</span></td>
+                    <td><p>A predicate for which object to find.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">T</span></td>
+                    <td><p>The object that matches the given predicate. Throws a not found exception
+if the object is not found.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Get_" data-uid="SQLite4Unity3d.SQLiteConnection.Get*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Get__1_System_Object_" data-uid="SQLite4Unity3d.SQLiteConnection.Get``1(System.Object)">Get&lt;T&gt;(Object)</h4>
+              <div class="markdown level1 summary"><p>Attempts to retrieve an object with the given primary key from the table
+associated with the specified type. Use of this method requires that
+the given type have a designated PrimaryKey (using the PrimaryKeyAttribute).</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public T Get&lt;T&gt;(object pk)where T : new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">pk</span></td>
+                    <td><p>The primary key.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">T</span></td>
+                    <td><p>The object with the given primary key. Throws a not found exception
+if the object is not found.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_GetMapping_" data-uid="SQLite4Unity3d.SQLiteConnection.GetMapping*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_GetMapping_Type_SQLite4Unity3d_CreateFlags_" data-uid="SQLite4Unity3d.SQLiteConnection.GetMapping(Type,SQLite4Unity3d.CreateFlags)">GetMapping(Type, CreateFlags)</h4>
+              <div class="markdown level1 summary"><p>Retrieves the mapping that is automatically generated for the given type.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public TableMapping GetMapping(Type type, CreateFlags createFlags = CreateFlags.None)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Type</span></td>
+                    <td><span class="parametername">type</span></td>
+                    <td><p>The type whose mapping to the database is returned.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.CreateFlags.html">CreateFlags</a></td>
+                    <td><span class="parametername">createFlags</span></td>
+                    <td><p>Optional flags allowing implicit PK and indexes based on naming conventions</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a></td>
+                    <td><p>The mapping represents the schema of the columns of the database and contains 
+methods to set and get properties of objects.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_GetMapping_" data-uid="SQLite4Unity3d.SQLiteConnection.GetMapping*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_GetMapping__1" data-uid="SQLite4Unity3d.SQLiteConnection.GetMapping``1">GetMapping&lt;T&gt;()</h4>
+              <div class="markdown level1 summary"><p>Retrieves the mapping that is automatically generated for the given type.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public TableMapping GetMapping&lt;T&gt;()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a></td>
+                    <td><p>The mapping represents the schema of the columns of the database and contains 
+methods to set and get properties of objects.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_GetTableInfo_" data-uid="SQLite4Unity3d.SQLiteConnection.GetTableInfo*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_GetTableInfo_System_String_" data-uid="SQLite4Unity3d.SQLiteConnection.GetTableInfo(System.String)">GetTableInfo(String)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public List&lt;SQLiteConnection.ColumnInfo&gt; GetTableInfo(string tableName)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">tableName</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">List</span>&lt;<a class="xref" href="SQLite4Unity3d.SQLiteConnection.ColumnInfo.html">SQLiteConnection.ColumnInfo</a>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Insert_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Insert_System_Object_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert(System.Object)">Insert(Object)</h4>
+              <div class="markdown level1 summary"><p>Inserts the given object and retrieves its
+auto incremented primary key if it has one.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Insert(object obj)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows added to the table.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Insert_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Insert_System_Object_System_String_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert(System.Object,System.String)">Insert(Object, String)</h4>
+              <div class="markdown level1 summary"><p>Inserts the given object and retrieves its
+auto incremented primary key if it has one.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Insert(object obj, string extra)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to insert.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">extra</span></td>
+                    <td><p>Literal SQL code that gets placed into the command. INSERT {extra} INTO ...</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows added to the table.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Insert_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Insert_System_Object_System_String_Type_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert(System.Object,System.String,Type)">Insert(Object, String, Type)</h4>
+              <div class="markdown level1 summary"><p>Inserts the given object and retrieves its
+auto incremented primary key if it has one.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Insert(object obj, string extra, Type objType)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to insert.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">extra</span></td>
+                    <td><p>Literal SQL code that gets placed into the command. INSERT {extra} INTO ...</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">Type</span></td>
+                    <td><span class="parametername">objType</span></td>
+                    <td><p>The type of object to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows added to the table.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Insert_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Insert_System_Object_Type_" data-uid="SQLite4Unity3d.SQLiteConnection.Insert(System.Object,Type)">Insert(Object, Type)</h4>
+              <div class="markdown level1 summary"><p>Inserts the given object and retrieves its
+auto incremented primary key if it has one.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Insert(object obj, Type objType)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to insert.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">Type</span></td>
+                    <td><span class="parametername">objType</span></td>
+                    <td><p>The type of object to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows added to the table.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_InsertAll_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertAll*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_InsertAll_System_Collections_IEnumerable_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertAll(System.Collections.IEnumerable)">InsertAll(IEnumerable)</h4>
+              <div class="markdown level1 summary"><p>Inserts all specified objects.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int InsertAll(IEnumerable objects)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Collections.IEnumerable</span></td>
+                    <td><span class="parametername">objects</span></td>
+                    <td><p>An <see cref="!:IEnumerable"></see> of the objects to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows added to the table.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_InsertAll_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertAll*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_InsertAll_System_Collections_IEnumerable_System_String_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertAll(System.Collections.IEnumerable,System.String)">InsertAll(IEnumerable, String)</h4>
+              <div class="markdown level1 summary"><p>Inserts all specified objects.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int InsertAll(IEnumerable objects, string extra)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Collections.IEnumerable</span></td>
+                    <td><span class="parametername">objects</span></td>
+                    <td><p>An <see cref="!:IEnumerable"></see> of the objects to insert.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">extra</span></td>
+                    <td><p>Literal SQL code that gets placed into the command. INSERT {extra} INTO ...</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows added to the table.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_InsertAll_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertAll*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_InsertAll_System_Collections_IEnumerable_Type_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertAll(System.Collections.IEnumerable,Type)">InsertAll(IEnumerable, Type)</h4>
+              <div class="markdown level1 summary"><p>Inserts all specified objects.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int InsertAll(IEnumerable objects, Type objType)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Collections.IEnumerable</span></td>
+                    <td><span class="parametername">objects</span></td>
+                    <td><p>An <see cref="!:IEnumerable"></see> of the objects to insert.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">Type</span></td>
+                    <td><span class="parametername">objType</span></td>
+                    <td><p>The type of object to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows added to the table.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_InsertOrReplace_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertOrReplace*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_InsertOrReplace_System_Object_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertOrReplace(System.Object)">InsertOrReplace(Object)</h4>
+              <div class="markdown level1 summary"><p>Inserts the given object and retrieves its
+auto incremented primary key if it has one.
+If a UNIQUE constraint violation occurs with
+some pre-existing object, this function deletes
+the old object.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int InsertOrReplace(object obj)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows modified.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_InsertOrReplace_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertOrReplace*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_InsertOrReplace_System_Object_Type_" data-uid="SQLite4Unity3d.SQLiteConnection.InsertOrReplace(System.Object,Type)">InsertOrReplace(Object, Type)</h4>
+              <div class="markdown level1 summary"><p>Inserts the given object and retrieves its
+auto incremented primary key if it has one.
+If a UNIQUE constraint violation occurs with
+some pre-existing object, this function deletes
+the old object.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int InsertOrReplace(object obj, Type objType)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to insert.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">Type</span></td>
+                    <td><span class="parametername">objType</span></td>
+                    <td><p>The type of object to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows modified.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_NewCommand_" data-uid="SQLite4Unity3d.SQLiteConnection.NewCommand*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_NewCommand" data-uid="SQLite4Unity3d.SQLiteConnection.NewCommand">NewCommand()</h4>
+              <div class="markdown level1 summary"><p>Creates a new SQLiteCommand. Can be overridden to provide a sub-class.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual SQLiteCommand NewCommand()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.SQLiteCommand.html">SQLiteCommand</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 id="SQLite4Unity3d_SQLiteConnection_NewCommand_seealso">See Also</h5>
+              <div class="seealso">
+                  <div><a class="xref" href="SQLite4Unity3d.SQLiteCommand.html#SQLite4Unity3d_SQLiteCommand_OnInstanceCreated_System_Object_">OnInstanceCreated(Object)</a></div>
+              </div>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Query_" data-uid="SQLite4Unity3d.SQLiteConnection.Query*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Query_SQLite4Unity3d_TableMapping_System_String_System_Object___" data-uid="SQLite4Unity3d.SQLiteConnection.Query(SQLite4Unity3d.TableMapping,System.String,System.Object[])">Query(TableMapping, String, Object[])</h4>
+              <div class="markdown level1 summary"><p>Creates a SQLiteCommand given the command text (SQL) with arguments. Place a &#39;?&#39;
+in the command text for each of the arguments and then executes that command.
+It returns each row of the result using the specified mapping. This function is
+only used by libraries in order to query the database via introspection. It is
+normally not used.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public List&lt;object&gt; Query(TableMapping map, string query, params object[] args)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a></td>
+                    <td><span class="parametername">map</span></td>
+                    <td><p>A <a class="xref" href="SQLite4Unity3d.TableMapping.html">TableMapping</a> to use to convert the resulting rows
+into objects.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">query</span></td>
+                    <td><p>The fully escaped SQL.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><span class="parametername">args</span></td>
+                    <td><p>Arguments to substitute for the occurences of &#39;?&#39; in the query.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">List</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+                    <td><p>An enumerable with one result for each row returned by the query.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Query_" data-uid="SQLite4Unity3d.SQLiteConnection.Query*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Query__1_System_String_System_Object___" data-uid="SQLite4Unity3d.SQLiteConnection.Query``1(System.String,System.Object[])">Query&lt;T&gt;(String, Object[])</h4>
+              <div class="markdown level1 summary"><p>Creates a SQLiteCommand given the command text (SQL) with arguments. Place a &#39;?&#39;
+in the command text for each of the arguments and then executes that command.
+It returns each row of the result using the mapping automatically generated for
+the given type.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public List&lt;T&gt; Query&lt;T&gt;(string query, params object[] args)where T : new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">query</span></td>
+                    <td><p>The fully escaped SQL.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><span class="parametername">args</span></td>
+                    <td><p>Arguments to substitute for the occurences of &#39;?&#39; in the query.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">List</span>&lt;T&gt;</td>
+                    <td><p>An enumerable with one result for each row returned by the query.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Release_" data-uid="SQLite4Unity3d.SQLiteConnection.Release*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Release_System_String_" data-uid="SQLite4Unity3d.SQLiteConnection.Release(System.String)">Release(String)</h4>
+              <div class="markdown level1 summary"><p>Releases a savepoint returned from <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_SaveTransactionPoint">SaveTransactionPoint()</a>.  Releasing a savepoint 
+makes changes since that savepoint permanent if the savepoint began the transaction,
+or otherwise the changes are permanent pending a call to <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_Commit">Commit()</a>.</p>
+<p>The RELEASE command is like a COMMIT for a SAVEPOINT.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void Release(string savepoint)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">savepoint</span></td>
+                    <td><p>The name of the savepoint to release.  The string should be the result of a call to <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_SaveTransactionPoint">SaveTransactionPoint()</a></p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Rollback_" data-uid="SQLite4Unity3d.SQLiteConnection.Rollback*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Rollback" data-uid="SQLite4Unity3d.SQLiteConnection.Rollback">Rollback()</h4>
+              <div class="markdown level1 summary"><p>Rolls back the transaction that was begun by <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_BeginTransaction">BeginTransaction()</a> or <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_SaveTransactionPoint">SaveTransactionPoint()</a>.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void Rollback()</code></pre>
+              </div>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_RollbackTo_" data-uid="SQLite4Unity3d.SQLiteConnection.RollbackTo*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_RollbackTo_System_String_" data-uid="SQLite4Unity3d.SQLiteConnection.RollbackTo(System.String)">RollbackTo(String)</h4>
+              <div class="markdown level1 summary"><p>Rolls back the savepoint created by <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_BeginTransaction">BeginTransaction()</a> or SaveTransactionPoint.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void RollbackTo(string savepoint)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">savepoint</span></td>
+                    <td><p>The name of the savepoint to roll back to, as returned by <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_SaveTransactionPoint">SaveTransactionPoint()</a>.  If savepoint is null or empty, this method is equivalent to a call to <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_Rollback">Rollback()</a></p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_RunInTransaction_" data-uid="SQLite4Unity3d.SQLiteConnection.RunInTransaction*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_RunInTransaction_Action_" data-uid="SQLite4Unity3d.SQLiteConnection.RunInTransaction(Action)">RunInTransaction(Action)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void RunInTransaction(Action action)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Action</span></td>
+                    <td><span class="parametername">action</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_SaveTransactionPoint_" data-uid="SQLite4Unity3d.SQLiteConnection.SaveTransactionPoint*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_SaveTransactionPoint" data-uid="SQLite4Unity3d.SQLiteConnection.SaveTransactionPoint">SaveTransactionPoint()</h4>
+              <div class="markdown level1 summary"><p>Creates a savepoint in the database at the current point in the transaction timeline.
+Begins a new transaction if one is not in progress.</p>
+<p>Call <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_RollbackTo_System_String_">RollbackTo(String)</a> to undo transactions since the returned savepoint.
+Call <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_Release_System_String_">Release(String)</a> to commit transactions after the savepoint returned here.
+Call <a class="xref" href="SQLite4Unity3d.SQLiteConnection.html#SQLite4Unity3d_SQLiteConnection_Commit">Commit()</a> to end the transaction, committing all changes.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public string SaveTransactionPoint()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><p>A string naming the savepoint.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Table_" data-uid="SQLite4Unity3d.SQLiteConnection.Table*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Table__1" data-uid="SQLite4Unity3d.SQLiteConnection.Table``1">Table&lt;T&gt;()</h4>
+              <div class="markdown level1 summary"><p>Returns a queryable interface to the table represented by the given type.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public TableQuery&lt;T&gt; Table&lt;T&gt;()where T : new ()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="SQLite4Unity3d.TableQuery-1.html">TableQuery</a>&lt;T&gt;</td>
+                    <td><p>A queryable object that is able to translate Where, OrderBy, and Take
+queries into native SQL.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="parametername">T</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Update_" data-uid="SQLite4Unity3d.SQLiteConnection.Update*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Update_System_Object_" data-uid="SQLite4Unity3d.SQLiteConnection.Update(System.Object)">Update(Object)</h4>
+              <div class="markdown level1 summary"><p>Updates all of the columns of a table using the specified object
+except for its primary key.
+The object is required to have a primary key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Update(object obj)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to update. It must have a primary key designated using the PrimaryKeyAttribute.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows updated.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_Update_" data-uid="SQLite4Unity3d.SQLiteConnection.Update*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_Update_System_Object_Type_" data-uid="SQLite4Unity3d.SQLiteConnection.Update(System.Object,Type)">Update(Object, Type)</h4>
+              <div class="markdown level1 summary"><p>Updates all of the columns of a table using the specified object
+except for its primary key.
+The object is required to have a primary key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int Update(object obj, Type objType)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><span class="parametername">obj</span></td>
+                    <td><p>The object to update. It must have a primary key designated using the PrimaryKeyAttribute.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">Type</span></td>
+                    <td><span class="parametername">objType</span></td>
+                    <td><p>The type of object to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows updated.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="SQLite4Unity3d_SQLiteConnection_UpdateAll_" data-uid="SQLite4Unity3d.SQLiteConnection.UpdateAll*"></a>
+              <h4 id="SQLite4Unity3d_SQLiteConnection_UpdateAll_System_Collections_IEnumerable_" data-uid="SQLite4Unity3d.SQLiteConnection.UpdateAll(System.Collections.IEnumerable)">UpdateAll(IEnumerable)</h4>
+              <div class="markdown level1 summary"><p>Updates all specified objects.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int UpdateAll(IEnumerable objects)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Collections.IEnumerable</span></td>
+                    <td><span class="parametername">objects</span></td>
+                    <td><p>An <see cref="!:IEnumerable"></see> of the objects to insert.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The number of rows modified.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+                        </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            &#0169; 2017 Mapbox
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

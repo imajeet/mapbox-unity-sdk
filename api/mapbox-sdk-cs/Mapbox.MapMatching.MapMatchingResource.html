@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MapMatchingResource
+   | Mapbox SDK for Unity </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MapMatchingResource
+   | Mapbox SDK for Unity ">
+    <meta name="generator" content="docfx 2.14.1.0">
+    
+    <link rel="shortcut icon" href="../../docs/images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../docs/images/mapbox-logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              
+              <h1 id="Mapbox_MapMatching_MapMatchingResource" data-uid="Mapbox.MapMatching.MapMatchingResource">Class MapMatchingResource
+              </h1>
+              <div class="markdown level0 summary"><p>Base geocode class. </p>
+</div>
+              <div class="markdown level0 conceptual"></div>
+              <div class="inheritance">
+                <h5>Inheritance</h5>
+                  <div class="level0"><span class="xref">System.Object</span></div>
+                  <div class="level1"><a class="xref" href="Mapbox.Platform.Resource.html">Resource</a></div>
+                  <div class="level2"><span class="xref">MapMatchingResource</span></div>
+              </div>
+              <div class="inheritedMembers">
+                <h5>Inherited Members</h5>
+                <div>
+                  <a class="xref" href="Mapbox.Platform.Resource.html#Mapbox_Platform_Resource_EncodeQueryString_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String_System_String___">Resource.EncodeQueryString(IEnumerable&lt;KeyValuePair&lt;String, String&gt;&gt;)</a>
+                </div>
+                <div>
+                  <a class="xref" href="Mapbox.Platform.Resource.html#Mapbox_Platform_Resource_GetUrlQueryFromArray__1___0___System_String_">Resource.GetUrlQueryFromArray&lt;U&gt;(U[], String)</a>
+                </div>
+                <div>
+                  <span class="xref">System.Object.ToString()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.Equals(System.Object)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.GetHashCode()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.GetType()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.MemberwiseClone()</span>
+                </div>
+              </div>
+              <h6><strong>Namespace</strong>:Mapbox.MapMatching</h6>
+              <h6><strong>Assembly</strong>:cs.temp.dll.dll</h6>
+              <h5 id="Mapbox_MapMatching_MapMatchingResource_syntax">Syntax</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public class MapMatchingResource : Resource</code></pre>
+              </div>
+              <h3 id="fields">Fields
+              </h3>
+              
+              
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Annotations" data-uid="Mapbox.MapMatching.MapMatchingResource.Annotations">Annotations</h4>
+              <div class="markdown level1 summary"><p>Whether or not to return additional metadata along the route.</p>
+<p>Possible values are: duration, distance and speed.</p>
+<p>Several annotations can be used.</p>
+<p>Combine via &#39;|&#39;.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Annotations? Annotations</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Mapbox.MapMatching.Annotations.html">Annotations</a>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Geometries" data-uid="Mapbox.MapMatching.MapMatchingResource.Geometries">Geometries</h4>
+              <div class="markdown level1 summary"><p>Format of the returned geometry.</p>
+<p>Allowed values are: geojson (as LineString ), polyline with precision 5,  polyline6 (polyline with precision 6).</p>
+<p>The default value is polyline.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Geometries? Geometries</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Mapbox.MapMatching.Geometries.html">Geometries</a>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Language" data-uid="Mapbox.MapMatching.MapMatchingResource.Language">Language</h4>
+              <div class="markdown level1 summary"><p>Language of returned turn-by-turn text instructions.</p>
+<p>The default is English.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public InstructionLanguages? Language</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Mapbox.MapMatching.InstructionLanguages.html">InstructionLanguages</a>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Overview" data-uid="Mapbox.MapMatching.MapMatchingResource.Overview">Overview</h4>
+              <div class="markdown level1 summary"><p>Type of returned overview geometry.</p>
+<p>Can be full (the most detailed geometry available), simplified (a simplified version of the full geometry), or none (no overview geometry).</p>
+<p>The default is  simplified.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Overview? Overview</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Mapbox.MapMatching.Overview.html">Overview</a>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Profile" data-uid="Mapbox.MapMatching.MapMatchingResource.Profile">Profile</h4>
+              <div class="markdown level1 summary"><p>A directions profile ID.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Profile Profile</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.MapMatching.Profile.html">Profile</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Steps" data-uid="Mapbox.MapMatching.MapMatchingResource.Steps">Steps</h4>
+              <div class="markdown level1 summary"><p>Whether to return steps and turn-by-turn instructions.</p>
+<p>Can be  true or false.</p>
+<p>The default is false.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool ? Steps</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Tidy" data-uid="Mapbox.MapMatching.MapMatchingResource.Tidy">Tidy</h4>
+              <div class="markdown level1 summary"><p>Whether or not to transparently remove clusters and re-sample traces for improved map matching results.</p>
+<p>Removed tracepoints are set to &#39;null&#39; in the response!</p>
+<p>Can be true or false.</p>
+<p>The default is false.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool ? Tidy</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="properties">Properties
+              </h3>
+              
+              
+              <a id="Mapbox_MapMatching_MapMatchingResource_ApiEndpoint_" data-uid="Mapbox.MapMatching.MapMatchingResource.ApiEndpoint*"></a>
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_ApiEndpoint" data-uid="Mapbox.MapMatching.MapMatchingResource.ApiEndpoint">ApiEndpoint</h4>
+              <div class="markdown level1 summary"><p>Gets the API endpoint as a partial URL path. </p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public override string ApiEndpoint { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="overrides">Overrides</h5>
+              <div><a class="xref" href="Mapbox.Platform.Resource.html#Mapbox_Platform_Resource_ApiEndpoint">Resource.ApiEndpoint</a></div>
+              
+              
+              <a id="Mapbox_MapMatching_MapMatchingResource_Coordinates_" data-uid="Mapbox.MapMatching.MapMatchingResource.Coordinates*"></a>
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Coordinates" data-uid="Mapbox.MapMatching.MapMatchingResource.Coordinates">Coordinates</h4>
+              <div class="markdown level1 summary"><p>Coordinate to visit in order; there can be between 2 and 100 coordinates. </p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Vector2d[] Coordinates { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Utils.Vector2d.html">Vector2d</a>[]</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_MapMatching_MapMatchingResource_Radiuses_" data-uid="Mapbox.MapMatching.MapMatchingResource.Radiuses*"></a>
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Radiuses" data-uid="Mapbox.MapMatching.MapMatchingResource.Radiuses">Radiuses</h4>
+              <div class="markdown level1 summary"><p>A list of uints in meters indicating the assumed precision of the used tracking device.</p>
+<p>There must be as many radiuses as there are coordinates in the request.</p>
+<p>Values can be a number between 0 and 30.</p>
+<p>Use higher numbers (20-30) for noisy traces and lower numbers (1-10) for clean traces.</p>
+<p>The default value is 5.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public uint[] Radiuses { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.UInt32</span>[]</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_MapMatching_MapMatchingResource_Timestamps_" data-uid="Mapbox.MapMatching.MapMatchingResource.Timestamps*"></a>
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_Timestamps" data-uid="Mapbox.MapMatching.MapMatchingResource.Timestamps">Timestamps</h4>
+              <div class="markdown level1 summary"><p>Timestamps corresponding to each coordinate provided in the request.</p>
+<p>Must be numbers in Unix time (seconds since the Unix epoch).</p>
+<p>There must be as many timestamps as there are coordinates in the request.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public long[] Timestamps { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int64</span>[]</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="methods">Methods
+              </h3>
+              
+              
+              <a id="Mapbox_MapMatching_MapMatchingResource_GetUrl_" data-uid="Mapbox.MapMatching.MapMatchingResource.GetUrl*"></a>
+              <h4 id="Mapbox_MapMatching_MapMatchingResource_GetUrl" data-uid="Mapbox.MapMatching.MapMatchingResource.GetUrl">GetUrl()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public override string GetUrl()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="overrides">Overrides</h5>
+              <div><a class="xref" href="Mapbox.Platform.Resource.html#Mapbox_Platform_Resource_GetUrl">Resource.GetUrl()</a></div>
+                        </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            &#0169; 2017 Mapbox
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

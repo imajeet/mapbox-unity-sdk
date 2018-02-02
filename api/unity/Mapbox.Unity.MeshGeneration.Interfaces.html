@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Mapbox.Unity.MeshGeneration.Interfaces
+   | Mapbox SDK for Unity </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Mapbox.Unity.MeshGeneration.Interfaces
+   | Mapbox SDK for Unity ">
+    <meta name="generator" content="docfx 2.14.1.0">
+    
+    <link rel="shortcut icon" href="../../docs/images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../docs/images/mapbox-logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              <h1 id="Mapbox_Unity_MeshGeneration_Interfaces" data-uid="Mapbox.Unity.MeshGeneration.Interfaces">Namespace Mapbox.Unity.MeshGeneration.Interfaces
+              </h1>
+              <div class="markdown level0 summary"></div>
+              <div class="markdown level0 conceptual"></div>
+              <div class="markdown level0 remarks"></div>
+                <h3 id="classes">Classes
+              </h3>
+                  <h4><a class="xref" href="Mapbox.Unity.MeshGeneration.Interfaces.LayerVisualizerBase.html">LayerVisualizerBase</a></h4>
+                  <section><p>Layer visualizers contains sytling logic and processes features</p>
+</section>
+                  <h4><a class="xref" href="Mapbox.Unity.MeshGeneration.Interfaces.TypeVisualizerTuple.html">TypeVisualizerTuple</a></h4>
+                  <section></section>
+                  <h4><a class="xref" href="Mapbox.Unity.MeshGeneration.Interfaces.VectorLayerVisualizer.html">VectorLayerVisualizer</a></h4>
+                  <section><p>Layer Visualizer / Vector Layer Visualizer
+Layer visualizers corresponds to &#39;vector layer&#39; in vector data.So it receives layer data, which contains bunch of 
+features inside. But layer visualizer doesn&#39;t do the actual visualization itself either, and uses objects called 
+ModifierStacks to do it.Reason for this is that it&#39;s very likely that you&#39;ll need some sort of customization and/or 
+categorization at this point, like coloring buildings different by their type or showing only major road segments.
+To achieve this categorization, we have two properties; a default stack and a stack dictionary.
+Default Stack is like a fallback stack.If there isn&#39;t any custom stack found for a particular feature, it&#39;s passed 
+to default stack.If default stack is null, it isn&#39;t visualized at all.
+Stack dictionary is a dictionary of string key and modifier stack value. String key is the value of a property 
+inside the feature and this &#39;property&#39; is the &#39;type&#39; by default, so i.e. using key &#39;school&#39; means features with 
+&#39;type == school&#39;, or &#39;park&#39; means features with &#39;type==park&#39;. But school is a type of building and park is a type of landuse, at this point, we assume you know the properties and possible values of them in the vector data.You can easily check them here; <a href="https://www.mapbox.com/vector-tiles/mapbox-streets-v7/#overview">https://www.mapbox.com/vector-tiles/mapbox-streets-v7/#overview</a>
+As mentioned, default property for this is &#39;type&#39; but that doesn&#39;t work for all layers/features.For example, 
+road features use class property more than type, or traffic data has congestion property which you probably will want to use.
+For these cases, Vector Layer Visualizer also has a field called &#39;classification key&#39;. It looks like an empty field 
+in the inspector for now(we&#39;ll improve the ui on that) but if you set a value in there, like &#39;class&#39; or &#39;congestion&#39;, 
+it&#39;ll override the default property name &#39;type&#39; and will be used for finding the correct modifier stack.
+You can check Drive demo and traffic layer to see how this works.
+So to wrap it up, for each feature in the layer, we first check if there&#39;s a custom modifier stack defined for that 
+type of feature in the stack dictionary.If we find one, we pass feature to that stack. If not, we check the default
+dictionary, if it&#39;s set, we pass feature to that, if not we skip the feature and not visualize it.
+We also have filters in vector layer visualizer.Filters are simple classes which decides if a particular feature 
+will be visualized or not and returns a boolean. It runs before stacks so features decided not to be visualized is skipped right away.Using filters, you can do things like; &#39;not visualize schools&#39; or &#39;not (or only) visualize buildings taller than 50meters&#39;.</p>
+</section>
+                <h3 id="interfaces">Interfaces
+              </h3>
+                  <h4><a class="xref" href="Mapbox.Unity.MeshGeneration.Interfaces.IFeaturePropertySettable.html">IFeaturePropertySettable</a></h4>
+                  <section></section>
+                        </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            &#0169; 2017 Mapbox
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
